@@ -4,7 +4,8 @@ import SayMyName from './components/SayMyName';
 import Pessoa from './components/Pessoa';
 import List from './components/List';
 import Evento from './components/Evento';
-import Form from './components/Form';
+import UserForm from './components/Form.jsx'
+//import Form from './components/Form';
 
 function App() {
     const nome = 'Maria'
@@ -21,7 +22,7 @@ function App() {
             <List/>
             <h1>Testando eventos</h1>
             <Evento/>
-            <Form/>
+            <UserForm/>
 		</div>
   	);
 }
