@@ -1,47 +1,43 @@
-import React, { Component } from 'react';
+import { useState } from "react";
 
-export default class UserForm extends Component {
-    constructor() {
-      super();
-      this.state = {
-        name: '',
-      };
-    }
-
-    onChange = (e) => {
-      /*
-        Because we named the inputs to match their
-        corresponding values in state, it's
-        super easy to update the state
-      */
-      this.setState({ [e.target.name]: e.target.value });
-    }
-
-    cadastrarUsuario = (e, name) => {
+function Form() {
+    function cadastrarUsuario(e) {
         e.preventDefault()
-        alert('Usuario ' + name + ' cadastrado!')
+        console.log(name)
+        alert(`Usuario ${name} Cadastrado! \nSenha: ${password}`)
     }
 
-    render() {
-        const {name} = this.state;
-        return (
-            <>
-                <h1>Formulário</h1>
-                <form onSubmit={(e) => this.cadastrarUsuario(e, name)}>
-                    <div>
-                        <input type="text" 
-                                name="name" 
-                                onChange={this.onChange}
-                                placeholder="Digite seu nome" />
-                    </div>
-                    <div>
-                        <input type="submit" value="Cadastrar" />
-                    </div>
-                </form>
-            </>
-        );
-    }
+    const [name, setName] = useState()
+    const [password, setPassword] = useState()
+
+    return (
+        <div>
+            <h1>Cadastro: </h1>
+            <form onSubmit={cadastrarUsuario}>
+                <div>
+                    <label htmlFor="name">nome:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Digite seu nome: " />
+                </div>
+                <div>
+                    <label htmlFor="password">Senha: </label>
+                    <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Digite sua senha" />
+                </div>
+                <div>
+                    <input type="submit" value="Cadastrar" />
+                </div>
+            </form>
+        </div>
+    )
 }
 
-
-// export default Form
+export default Form
