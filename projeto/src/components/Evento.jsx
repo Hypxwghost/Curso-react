@@ -7,8 +7,9 @@ function Evento() {
         e.target.style.color = 'red';
     }
 
-    function segundoEvento() {
-        alert('Segundo evento !')
+    function segundoEvento(e) {
+        alert('Segundo evento !');
+        e.target.style.color = 'purple';
     }
 
     return(
