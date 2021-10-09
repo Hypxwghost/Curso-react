@@ -1,3 +1,5 @@
+import React from "react";
+
 function Pessoa({nome, idade, profissao, foto}) {
     return (
         <div>

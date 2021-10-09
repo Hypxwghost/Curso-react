@@ -1,3 +1,4 @@
+import React from "react";
 import Frase from "./Frase"
 
 function HelloWorld() {
