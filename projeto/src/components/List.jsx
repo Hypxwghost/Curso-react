@@ -5,7 +5,7 @@ const initialList = [];
 
 function List() {
     const [list, setList] = React.useState(initialList);
-    const [name, setName] = React.useState("");
+    const [name, setName] = React.useState();
 
     function handleChange(e) {
         setName(e.target.value);

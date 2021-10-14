@@ -2,14 +2,16 @@ import React from "react";
 import { useState } from "react";
 
 function Form() {
+    const [name, setName] = useState()
+    const [password, setPassword] = useState()
+
     function cadastrarUsuario(e) {
         e.preventDefault()
         console.log(name)
         alert(`Usuario ${name} Cadastrado! \nSenha: ${password}`)
+        setName("")
+        setPassword("")
     }
-
-    const [name, setName] = useState()
-    const [password, setPassword] = useState()
 
     return (
         <div>
@@ -21,6 +23,7 @@ function Form() {
                         type="text"
                         name="name"
                         id="name"
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Digite seu nome: " />
                 </div>
@@ -30,6 +33,7 @@ function Form() {
                     type="password"
                     name="password"
                     id="password"
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Digite sua senha" />
                 </div>
