@@ -16,7 +16,7 @@ function Form() {
             <h1>Cadastro: </h1>
             <form onSubmit={cadastrarUsuario}>
                 <div>
-                    <label htmlFor="name">nome:</label>
+                    <label htmlFor="name">Nome: </label>
                     <input
                         type="text"
                         name="name"
